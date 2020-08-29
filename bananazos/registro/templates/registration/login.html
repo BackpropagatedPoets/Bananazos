@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="section">
+    <h1>Inicia Sesion</h1>
+    <form method="POST" class="form-group">
+        {% csrf_token %}
+        {{form}}
+        <br>
+        <button class="btn waves-effect waves-light" type="submit" name="action">
+            Aceptar
+        </button>
+        <p>No tienes una cuenta? Crea una <a href="/registro"><strong>aqui</strong></a></p>
+    </form>
+</div>
+{% endblock %}

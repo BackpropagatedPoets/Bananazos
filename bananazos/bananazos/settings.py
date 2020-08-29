@@ -37,7 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "general.apps.GeneralConfig"
+    'crispy_forms',
+    'crispy_forms_materialize',
+    "bananazos.apps.GeneralConfig",
+    "general.apps.GeneralConfig",
+    "registro.apps.GeneralConfig"
 ]
 
 MIDDLEWARE = [
@@ -123,3 +127,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+CRISPY_TEMPLATE_PACK = 'materialize'
+
+LOGIN_REDIRECT_URL = '/'
+
+LOGOUT_REDIRECT_URL = '/'
