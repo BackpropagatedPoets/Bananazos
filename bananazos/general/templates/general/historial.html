@@ -1,0 +1,28 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<div class="section">
+    <h1>Historial</h1>
+    <!--   Icon Section   -->
+    <div class="row">
+      {% for id, titulo, imagen, duracion, vistas in trailers %}
+        
+          <div class="icon-block">
+            <a href="{% url 'trailers:video' id %}">
+                <center>
+                      <h5 class="center">{{titulo}}</h5>
+                      <img  data-caption="A picture of a way with a group of trees in a park" width="250" src={{imagen}}>
+                </center>
+                <center>
+                <pre class="light">{{duracion}} min</pre> 
+                <pre>{{vistas}} reproducciones</pre>
+                </center>
+                
+            </a>
+          
+      </div>  
+      {% endfor %}
+      </div>
+    </div>
+{% endblock %}

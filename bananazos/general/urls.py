@@ -3,5 +3,7 @@ from . import views
 app_name = 'trailers'
 urlpatterns = [
     # post views
-    path('', views.trailers_list, name='trailers_list')
+    path('', views.trailers_list, name='trailers_list'),
+    path('video/<int:pk>', views.video, name="video"),
+    path('historial', views.historial, name='historial')
 ]
