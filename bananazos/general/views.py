@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect
-from .models import Trailer
+from .models import Trailer, TrailerForm
 
 def trailers_list(request):
     d = [
         1, "Trailazo", "https://lorempixel.com/800/400/nature/4",
-        "4:20", "320"]
+        "4:20", 320]
     l = [d] * 3
     return render(request, 'general/index.html', {"trailers":l})
 
@@ -29,3 +29,13 @@ def historial(request):
         "4:20", "320"]
     l = [d] * 3
     return render(request, 'general/historial.html', {"trailers":l})
+
+def subir_trailer(response):
+    if response.method == "POST":
+        form = TrailerForm(response.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("/")
+    else:        
+        form = TrailerForm()
+    return render(response, "general/subir_trailer.html", {"form":form})

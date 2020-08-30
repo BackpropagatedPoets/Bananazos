@@ -20,6 +20,7 @@
         {% if user.is_authenticated %}
           <li><a href="historial">Historial</a></li>
           <li><a href="#">Usuarios</a></li>
+          <li><a href="subir_trailer">Subir Trailer</a></li>
           <li><a href="/logout">Salir</a></li>
         {% else %}
           <li><a href="/login">Inicia Sesion</a></li>
@@ -30,6 +31,7 @@
         {% if user.authenticate %}
           <li><a href="#">Historial</a></li>
           <li><a href="#">Usuarios</a></li>
+          <li><a href="subir_trailer">Subir Trailer</a></li>
           <li><a href="/logout">Salir</a></li>
         {% else %}
           <li><a href="/login">Inicia Sesion</a></li>
