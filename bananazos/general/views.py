@@ -39,3 +39,10 @@ def subir_trailer(response):
     else:        
         form = TrailerForm()
     return render(response, "general/subir_trailer.html", {"form":form})
+
+def lista_usuarios(response):
+    return render(response, "general/lista_usuarios.html")
+
+def usuario(response, username):
+    d = {}
+    return render(response, "general/usuario.html", d)

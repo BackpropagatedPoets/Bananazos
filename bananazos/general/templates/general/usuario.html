@@ -1,0 +1,33 @@
+{% extends 'main/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="section">
+    <h1>{{username}}</h1>
+
+    {{% for id, titulo, link_video, duracion, vistas, link_emociones in info %}}
+        <div class="col s12 m8">
+
+                <div class="icon-block">
+                    <a href="{% url 'trailers:video' id %}">
+                        <center>
+                            <h5 class="center">{{titulo}}</h5>
+                            <img  data-caption="A picture of a way with a group of trees in a park" width="250" src={{link_video}}>
+                        
+                        <pre class="light">{{duracion}} min</pre> 
+                        <pre>{{vistas}} reproducciones</pre>
+                        </center>
+                        
+                    </a>
+                </div>
+
+        
+        </div>
+        <div class="col s12 m4">
+            <img  data-caption="img" width="250" src={{link_emociones}}>
+
+        </div>
+    {{% endfor %}}
+    
+</div>
+{% endblock %}

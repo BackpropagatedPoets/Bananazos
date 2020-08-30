@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="section">
+    <h1>Lista de Usuarios</h1>
+    {% for username, nombre, correo in usuarios %}
+        <a href="{% url 'general:usuario' username}">
+            <h3>{{nombre}}</h3>  
+            <h5>{{username}}: {{correo}}</h5>
+        </a>
+    {% endfor %}
+    
+</div>
+{% endblock %}
