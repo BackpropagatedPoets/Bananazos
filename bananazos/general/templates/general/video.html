@@ -57,12 +57,12 @@
 
     <ul class="collection">
     
-      {% for username, comentario in comentarios %}
+      {% for comentario in comentarios %}
       <li class="collection-item avatar">
         <i class="material-icons circle">face</i>
         
-        <span class="Nombre Persona"><strong>{{username}}</strong></span>
-        <p>{{comentario}}</p>
+        <span class="Nombre Persona"><strong>{{comentario.usuario_username}}</strong></span>
+        <p>{{comentario.comentario}}</p>
       </li>
       {% endfor %}
     </ul>
